@@ -1,0 +1,32 @@
+# Projeto Final IA Generativa - Gerador de textos especializado
+# Prompting vs ajuste fino (QLoRA) para resumo de noticias (RecognaSumm)
+#
+# Ambiente: GPU NVIDIA com CUDA (Colab T4 ou local), Python 3.10+
+#
+# IMPORTANTE (execucao local): o PyTorch NAO esta neste arquivo.
+# Instale-o ANTES, com suporte a CUDA, pelo indice oficial:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu126
+# (troque cu126 por cu128/cu130 conforme a versao de CUDA do seu driver,
+#  mostrada no canto superior direito do comando nvidia-smi)
+# Depois: pip install -r requirements.txt
+#
+# No Colab o torch com CUDA ja vem instalado: !pip install -q -r requirements.txt
+
+# --- Hugging Face: dados, modelos e ajuste fino ---
+huggingface_hub>=0.34,<1.0
+datasets>=2.19,<4.0.0
+transformers>=4.56
+accelerate>=1.0
+peft>=0.13
+trl>=0.21
+bitsandbytes>=0.43
+
+# --- Avaliacao ---
+rouge_score>=0.1.2
+bert_score>=0.3.13
+
+# --- Analise e graficos ---
+numpy
+pandas
+matplotlib
+tqdm
